@@ -33,19 +33,13 @@ func checkArgs(_ *types.Event) error {
 
 func executeMutator(event *types.Event) (*types.Event, error) {
 	
-//	event.Check.Status = 0
+	if(event.Check.Name == "registration"){
+	        event.Check.Status = 0
+		event.Check.Output = "New host registration."
+	} else if (event.Check.Name == "deregistration"){
+                event.Check.Status = 0
+                event.Check.Output = "Host automatically removed."
+	}
 
-//	log.Println("executing custom registration mutator")
-
-	return event, nil
-
-//	if(event.Check.Name == "registration"){
-//	        event.Check.Status = 0
-//		event.Check.Output = "New host registration."
-//	} else if (event.Check.Name == "deregistration"){
-//                event.Check.Status = 0
-//                event.Check.Output = "Host automatically removed."
-//	}
-
-//	return &types.Event{}, nil
+	return &types.Event{}, nil
 }
