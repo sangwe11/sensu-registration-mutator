@@ -35,10 +35,10 @@ func executeMutator(event *types.Event) (*types.Event, error) {
 	
 	if(event.Check.Name == "registration"){
 	        event.Check.Status = 0
-		event.Check.Output = "New host registration."
+//		event.Check.Output = "New host registration."
 	} else if (event.Check.Name == "deregistration"){
                 event.Check.Status = 0
-                event.Check.Output = "Host automatically removed."
+//                event.Check.Output = "Host automatically removed."
 	}
 
 	return &types.Event{}, nil
