@@ -15,8 +15,9 @@ func TestCheckArgs(t *testing.T) {
 
 func TestExecuteMutator(t *testing.T) {
 	assert := assert.New(t)
-	event := types.FixtureEvent("entity1", "check1")
+	event := types.FixtureEvent("entity1", "registration")
 	event.Check.Status = 1
-	err := executeMutator(event)
+	ev, err := executeMutator(event)
 	assert.NoError(err)
+	assert.Equal(ev.Check.Status, 0)
 }
