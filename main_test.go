@@ -19,5 +19,5 @@ func TestExecuteMutator(t *testing.T) {
 	event.Check.Status = 1
 	ev, err := executeMutator(event)
 	assert.NoError(err)
-	assert.Equal(ev.Check.Status, 0)
+	assert.EqualValues(ev.Check.Status, 0)
 }
